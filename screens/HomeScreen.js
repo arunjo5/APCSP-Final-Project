@@ -14,12 +14,12 @@ const HomeScreen = () => {
     <SafeAreaView className="bg-white h-full ">
       <View className="p-5">
         <Image
-          style={{ width: 150, height: 150, resizeMode: "contain" }}
-          source={require('../assets/greenride.png')}  
+          style={{ width: 175, height: 175, resizeMode: "contain" }}
+          source={require('../assets/greenride_2.png')}  
         />
 
         <GooglePlacesAutocomplete
-          query={{ key: GOOGLE_MAPS_APIKEY, language: "en" }}
+          query={{ key:GOOGLE_MAPS_APIKEY, language: "en" }}
           minLength={2}
           placeholder="Where from?"
           nearbyPlacesAPI="GooglePlacesSearch"
