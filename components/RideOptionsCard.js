@@ -16,20 +16,20 @@ import { selectTrevelTimeInformation } from "../slices/navSlice";
 const data = [
   {
     id: "Uber-X-123",
-    title: "UberX",
-    multiplier: 1,
+    title: "Tim's Sedan",
+    capacity: "2 seats left",
     image: "https://links.papareact.com/3pn",
   },
   {
     id: "Uber-XL-456",
-    title: "Uber XL",
-    multiplier: 1.2,
+    title: "Sarah's SUV",
+    capacity: "3 seats left",
     image: "https://links.papareact.com/5w8",
   },
   {
     id: "Uber-LUX-789",
-    title: "Uber LUX",
-    multiplier: 1.75,
+    title: "Mark's Sedan",
+    capacity: "1 seat left",
     image:
       "https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_1116,h_744/v1682350473/assets/97/e2a99c-c349-484f-b6b0-3cea1a8331b5/original/UberBlack.png",
   },
@@ -58,7 +58,7 @@ const RideOptionsCard = () => {
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
-        renderItem={({ item: { id, title, multiplier, image }, item }) => (
+        renderItem={({ item: { id, title, capacity, image }, item }) => (
           <TouchableOpacity
             onPress={() => setSelected(item)}
             style={[styles.container, id === selected?.id && styles.bgGray]}
@@ -76,15 +76,7 @@ const RideOptionsCard = () => {
               <Text>{travelTimeInformation?.duration?.text} Travel time</Text>
             </View>
             <Text className="text-xl">
-              {new Intl.NumberFormat("en", {
-                style: "currency",
-                currency: "USD",
-              }).format(
-                (travelTimeInformation?.duration.value *
-                  SURGE_CHARGE_RATE *
-                  multiplier) /
-                  100
-              )}
+              {capacity}
             </Text>
           </TouchableOpacity>
         )}

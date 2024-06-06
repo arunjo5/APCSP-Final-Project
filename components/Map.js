@@ -42,9 +42,9 @@ const Map = () => {
         &units=imperial&key=${GOOGLE_MAPS_APIKEY}`
       )
         .then((res) => res.json())
-        // .then((data) => {
-        //   dispatch(setTrevelTimeInformation(data.rows[0].elements[0]));
-        // });
+        .then((data) => {
+          dispatch(setTrevelTimeInformation(data.rows[0].elements[0]));
+        });
     };
 
     getTravelTime();
