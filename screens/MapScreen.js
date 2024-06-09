@@ -5,6 +5,7 @@ import Map from "../components/Map";
 import { createStackNavigator } from "@react-navigation/stack";
 import NavigateCard from "../components/NavigateCard";
 import RideOptionsCard from "../components/RideOptionsCard";
+import ConfirmationCard from "../components/ConfirmationCard";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 
@@ -42,6 +43,15 @@ const MapScreen = () => {
               headerShown: false,
             }}
           />
+
+          <Stack.Screen
+            name="ConfirmationCard"
+            component={ConfirmationCard}
+            options={{
+              headerShown: false,
+            }}
+          />
+
         </Stack.Navigator>
       </View>
     </View>

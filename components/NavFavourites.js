@@ -51,6 +51,17 @@ const NavFavourites = () => {
       );
       navigation.navigate("RideOptionsCard");
     }
+
+    if (currentScreen === "RideOptionsCard") {
+      // dispatch(
+      //   // setDestinaton({
+      //   //   location: location,
+      //   //   description: description,
+      //   // })
+      // );
+      navigation.navigate("ConfirmationCard");
+    }
+
   };
 
   return (

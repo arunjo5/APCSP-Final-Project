@@ -85,6 +85,7 @@ const RideOptionsCard = () => {
         <TouchableOpacity
           disabled={!selected}
           className={`bg-black py-3 m-3 ${!selected && "bg-gray-300"}`}
+          onPress={() => navigation.navigate("ConfirmationCard", { selectedRide: selected })}
         >
           <Text className="text-center text-white text-xl">
             Choose {selected?.title}
